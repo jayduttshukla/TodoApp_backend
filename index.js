@@ -7,7 +7,7 @@ const todos = require('./Routes/todos');
 const users = require('./Routes/users');
 const auth = require('./Routes/auth');
 const config = require('./config/' + (process.env.NODE_ENV || 'development'));
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 
 
 // Middlewares
