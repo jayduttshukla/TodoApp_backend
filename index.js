@@ -1,12 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
-var cors = require('cors')
+const cors = require('cors');
+const cacheControl = require('express-cache-controller');
 const app = express(); 
 const port = process.env.PORT || 3000;
 const todos = require('./Routes/todos');
 const users = require('./Routes/users');
 const auth = require('./Routes/auth');
 const config = require('./config/' + (process.env.NODE_ENV || 'development'));
+
+app.use(cacheControl());
+
 app.use(cors({credentials: true, origin: true}));
 
 app.use(function(req, res, next) {
