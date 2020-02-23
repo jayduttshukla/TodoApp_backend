@@ -1,5 +1,5 @@
-const {Todo, validate} = require('../models/todos');
-const auth = require('../middlewares/auth');
+const {Todo, validate} = require('../Models/todos');
+const auth = require('../Middlewares/auth');
 const express = require('express');
 const router = express.Router();
 

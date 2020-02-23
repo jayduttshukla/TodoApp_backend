@@ -4,9 +4,9 @@ const cors = require('cors');
 const cacheControl = require('express-cache-controller');
 const app = express(); 
 const port = process.env.PORT || 3000;
-const todos = require('./routes/todos');
-const users = require('./routes/users');
-const auth = require('./routes/auth');
+const todos = require('./Routes/todos');
+const users = require('./Routes/users');
+const auth = require('./Routes/auth');
 const config = require('./config/' + (process.env.NODE_ENV || 'development'));
 
 // Middlewares
