@@ -4,16 +4,16 @@ const cors = require('cors');
 const cacheControl = require('express-cache-controller');
 const app = express(); 
 const port = process.env.PORT || 3000;
-const todos = require('./Routes/todos');
-const users = require('./Routes/users');
-const auth = require('./Routes/auth');
+const todos = require('./routes/todos');
+const users = require('./routes/users');
+const auth = require('./routes/auth');
 const config = require('./config/' + (process.env.NODE_ENV || 'development'));
 
 // Middlewares
 app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-auth-token");
+    res.setHeader("Access-Control-Allow-Headers", "*");
     res.setHeader("Access-Control-Allow-Credentials", true);
     next();
 });
