@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/:id', auth, async (req,res) => {
-    const todos = await Todo.find({user_id : req.params.id});
+    const todos = await Todo.find({user_id : req.params.id}).sort({_id: -1})
     res.status(200).send(todos);
 });
 
